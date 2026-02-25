@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/microsoft/msquic/blob/main/docs/Settings.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/leikong/msquic/blob/main/docs/Settings.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -723,6 +723,12 @@ Generally MsQuic already choses the best / most correct default values for all s
 <td>Both</td>
 <td>The Listener opted in for DoS Mode event.</td>
 </tr>
+<tr>
+<td><code>QUIC_PARAM_LISTENER_PARTITION_INDEX</code><br> (preview)</td>
+<td>uint16_t</td>
+<td>Both</td>
+<td>The partition to use for listener callback events and incoming connections.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="connection-parameters">Connection Parameters</h2>
@@ -894,10 +900,16 @@ Generally MsQuic already choses the best / most correct default values for all s
 <td>The DiffServ Code Point put in the DiffServ field (formerly TypeOfService/TrafficClass) on packets sent from this connection.</td>
 </tr>
 <tr>
-<td><code>QUIC_PARAM_CONN_NETWORK_STATISTICS</code> <br> 20</td>
+<td><code>QUIC_PARAM_CONN_NETWORK_STATISTICS</code> <br> 32</td>
 <td>QUIC_NETWORK_STATISTICS</td>
 <td>Get-only</td>
 <td>Returns Connection level network statistics</td>
+</tr>
+<tr>
+<td><code>QUIC_PARAM_CONN_CLOSE_ASYNC</code> <br> 26</td>
+<td>uint8_t (BOOLEAN)</td>
+<td>Both</td>
+<td>The desired connection close behavior. Defaults to false (synchronous).</td>
 </tr>
 </tbody>
 </table>
@@ -1021,7 +1033,7 @@ Generally MsQuic already choses the best / most correct default values for all s
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/microsoft/msquic/blob/main/docs/Settings.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/leikong/msquic/blob/main/docs/Settings.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
